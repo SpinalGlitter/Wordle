@@ -6,10 +6,10 @@ import bodyParser from "body-parser";
 const app = express();
 const PORT = 5080;
 
-app.use(cors()); //Behövs ej?
-app.use(bodyParser.json()); // För att kunna skicka JSON-data i POST-request, behövs ej?
+app.use(cors()); 
+app.use(bodyParser.json()); 
 app.set("view engine", "ejs");
-app.set("views", path.join(process.cwd(), "src", "server", "views")); // Varför är det så här?
+app.set("views", path.join(process.cwd(), "src", "server", "views")); 
 
 import apiRoutes from "./src/server/routes/api.js";
 import pageRoutes from "./src/server/routes/pages.js";
