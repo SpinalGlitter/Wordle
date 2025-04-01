@@ -1,8 +1,6 @@
-import { Router } from "express";
-const router = Router();
+import express from "express";
+import { getRandomWordHandler } from "../controller/gameController.js";
 
-router.get("/", (req, res) => {
-  res.json({ message: "API fungerar!" });
-});
-
+const router = express.Router();
+router.get("/word", getRandomWordHandler);
 export default router;
