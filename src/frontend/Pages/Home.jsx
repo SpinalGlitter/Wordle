@@ -1,10 +1,16 @@
-import ApiTest from "../components/ApiTest";
+// import Game from '../components/Game';
 
 export default function Home() {
   return (
     <div>
-      <h1>Startsida</h1>
-      <ApiTest />
+      <h1>Wordle Game</h1>
+      {/* <Game /> */}
     </div>
   );
 }
+
+
+
+
+
+
