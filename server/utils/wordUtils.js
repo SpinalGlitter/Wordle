@@ -1,13 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const wordsPath = path.join(
-  process.cwd(),
-  "src",
-  "server",
-  "data",
-  "words_alpha.txt"
-);
+const wordsPath = path.join(process.cwd(), "data", "words_alpha.txt");
 
 const words = fs
   .readFileSync(wordsPath, "utf-8")
