@@ -1,6 +1,10 @@
 import express from "express";
-import { getRandomWordHandler } from "../controller/gameController.js";
+import { getRandomWordHandler, validateGuess} from "../controller/gameController.js";
+
 
 const router = express.Router();
+
 router.get("/word", getRandomWordHandler);
+router.post("/guess", validateGuess);
+
 export default router;
