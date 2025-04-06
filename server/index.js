@@ -9,7 +9,7 @@ const PORT = 5080;
 app.use(cors()); 
 app.use(express.json());
 app.set("view engine", "ejs");
-app.set("views", path.join(process.cwd(), "server", "views")); 
+app.set("views", path.join(process.cwd(), "views")); 
 
 import apiRoutes from "./routes/api.js";
 import pageRoutes from "./routes/pages.js";

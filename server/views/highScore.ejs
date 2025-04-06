@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Highscore</title>
+</head>
+
+<body>
+    <h1>Top 10 scores!</h1>
+    <table border="1">
+        <thead>>
+        <tr>
+            <th>Name</th>
+            <th>Time (sec)</th>
+            <th>Number of guesses</th>
+            <th>Number of characters</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>>
+        <% highscores.forEach(score=> { %>
+            <tr>
+                <td>
+                    <%= score.name %>
+                </td>
+                <td>
+                    <%= score.time %>
+                </td>
+                <td>
+                    <%= score.guesses %>
+                </td>
+                <td>
+                    <%= score.wordLength %>
+                </td>
+                <td>
+                    <%= score.uniqueLetters ? "Ja" : "Nej" %>
+                </td>
+                <td>
+                    <%= score.date %>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
