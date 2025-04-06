@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import GuessInput from "./GuessInput";
 import GuessResult from "./GuessResult";
 import HighscoreForm from "./HighscoreForm";
+import Button from "./Button";
+
 
 export default function Game() {
   const [correctWord, setCorrectWord] = useState("");
@@ -64,7 +67,7 @@ export default function Game() {
         style={{ marginBottom: "20px" }}
       >
         <label>
-          Word length:
+          Number of characters:
           <input
             type="number"
             max="10"
@@ -84,7 +87,7 @@ export default function Game() {
           Only unique letters
         </label>
 
-        <button type="submit" style={{ marginLeft: "1rem" }}>
+        <button type="submit" style={{ marginLeft: "1rem" }} className="button">
           New Game
         </button>
       </form>
@@ -107,6 +110,9 @@ export default function Game() {
           correctWord={correctWord}
         />
       )}
+      <Link to="/highscore">
+        <Button>Highscore</Button>
+      </Link>
     </div>
   );
 }

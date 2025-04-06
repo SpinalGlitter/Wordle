@@ -8,7 +8,7 @@ export default function GuessInput({ guess, setGuess, handleGuess }) {
         value={guess}
         onChange={(e) => setGuess(e.target.value)}
       />
-      <button onClick={handleGuess} disabled={guess.trim() === "" || !alphChar}>
+      <button className="button" onClick={handleGuess} disabled={guess.trim() === "" || !alphChar}>
         Guess
       </button>
     </div>
