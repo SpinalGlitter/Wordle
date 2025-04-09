@@ -4,6 +4,7 @@ import GuessInput from "./GuessInput";
 import GuessResult from "./GuessResult";
 import HighscoreForm from "./HighscoreForm";
 import Button from "./Button";
+import { API_URL } from "../config.js";
 
 
 export default function Game() {
@@ -17,7 +18,7 @@ export default function Game() {
 
   const fetchWord = () => {
     fetch(
-      `http://localhost:5080/api/word?length=${wordLength}&unique=${uniqueLetters}`
+      `${API_URL}/api/word?length=${wordLength}&unique=${uniqueLetters}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -38,7 +39,7 @@ export default function Game() {
   }, []);
 
   const handleGuess = () => {
-    fetch("http://localhost:5080/api/guess", {
+    fetch(`${API_URL}/api/guess`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config.js";
 
 export default function HighscoreForm({
   duration,
@@ -10,7 +11,7 @@ export default function HighscoreForm({
   const [name, setName] = useState("");
 
   const submitHighscore = () => {
-    fetch("http://localhost:5080/api/highscore", {
+    fetch(`${API_URL}/api/highscore`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +23,8 @@ export default function HighscoreForm({
         wordLength,
         uniqueLetters,
       }),
-    }).then(() => (window.location.href = "/highscores"));
+    })
+    .then(() => (window.location.href = "/highscore"));
     console.log(data);
   };
   return (
