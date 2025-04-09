@@ -1,46 +1,28 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Highscore</title>
+    <title>Highscore - Wordle</title>
 </head>
 
 <body>
-    <h1>Top 10 scores!</h1>
-    <table border="1">
-        <thead>>
-        <tr>
-            <th>Name</th>
-            <th>Time (sec)</th>
-            <th>Number of guesses</th>
-            <th>Number of characters</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody>>
+    <h1>Highscore-lista</h1>
+
+    <ul>
         <% highscores.forEach(score=> { %>
-            <tr>
-                <td>
+            <li>
+                <strong>
                     <%= score.name %>
-                </td>
-                <td>
-                    <%= score.time %>
-                </td>
-                <td>
-                    <%= score.guesses %>
-                </td>
-                <td>
-                    <%= score.wordLength %>
-                </td>
-                <td>
-                    <%= score.uniqueLetters ? "Ja" : "Nej" %>
-                </td>
-                <td>
-                    <%= score.date %>
-                </td>
-            </tr>
+                </strong>
+                - Time: <%= score.duration %> sekunder
+                    - Number of Guesses: <%= score.guesses %>
+                        - Number of characters: <%= score.wordLength %>
+                            - Unique letters: <%= score.uniqueLetters ? "Yes" : "No" %>
+            </li>
             <% }) %>
-        </tbody>
-    </table>
+    </ul>
+
+    <a href="http://localhost:5173/">Tillbaka till spelet</a>
 </body>
 
 </html>

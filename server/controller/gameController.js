@@ -5,8 +5,6 @@ export const getRandomWordHandler = (req, res) => {
   const length = Number(req.query.length);
   const unique = req.query.unique === "true";
 
-  console.log("API-anrop till /api/word", { length, unique });
-
   try {
     const word = getRandomWord(length, unique);
     res.json({ word });
