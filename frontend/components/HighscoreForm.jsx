@@ -18,6 +18,7 @@ export default function HighscoreForm({
       },
       body: JSON.stringify({
         name,
+        correctWord,
         duration,
         guesses,
         wordLength,

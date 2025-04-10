@@ -12,7 +12,7 @@ export default function Game() {
   const [guess, setGuess] = useState("");
   const [results, setResults] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [startTime, setStartTime] = useState(null);
+  const [startTime, setStartTime] = useState(0);
   const [wordLength, setWordLength] = useState(5);
   const [uniqueLetters, setUniqueLetters] = useState(false);
 
