@@ -3,10 +3,11 @@
 
 <head>
     <title>Highscore - Wordle</title>
+    <link rel="stylesheet" href="/highscore.css" />
 </head>
 
 <body>
-    <h1>Highscore-lista</h1>
+    <h1 class="header">Highscore lista</h1>
 
     <ul>
         <% highscores.forEach(score=> { %>
@@ -14,10 +15,11 @@
                 <strong>
                     <%= score.name %>
                 </strong>
-                - Time: <%= score.duration %> sekunder
-                    - Number of Guesses: <%= score.guesses %>
-                        - Number of characters: <%= score.wordLength %>
-                            - Unique letters: <%= score.uniqueLetters ? "Yes" : "No" %>
+                - Correct word: <%= score.correctWord.charAt(0).toUpperCase() + score.correctWord.slice(1) %>
+                    - Time: <%= score.duration %> seconds
+                        - Number of Guesses: <%= score.guesses %>
+                            - Number of characters: <%= score.wordLength %>
+                                - Unique letters: <%= score.uniqueLetters ? "Yes" : "No" %>
             </li>
             <% }) %>
     </ul>
