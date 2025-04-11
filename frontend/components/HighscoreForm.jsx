@@ -24,14 +24,20 @@ export default function HighscoreForm({
         wordLength,
         uniqueLetters,
       }),
-    })
-    .then(() => (window.location.href = "/highscore"));
+    }).then(() => (window.location.href = "/highscore"));
     console.log(data);
   };
   return (
     <div>
       <h2>Congratulations!</h2>
-      <h3>You guessed the correct word, {correctWord}!</h3>
+      <h3>You guessed the correct word:</h3>
+      <div className="result-row">
+        {correctWord.split("").map((letter, index) => (
+          <div key={index} className="letter-box correct">
+            {letter}
+          </div>
+        ))}
+      </div>
       <p>Your time: {duration} seconds</p>
       <p>Guesses: {guesses}</p>
       <p>Number of charachters: {wordLength}</p>
