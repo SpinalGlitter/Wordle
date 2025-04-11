@@ -2,6 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  text-align: center;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,13 +14,83 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
 }
 
+.game-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+input[type="text"] {
+  max-width: 500px;
+  padding: 10px;
+  font-size: 18px;
+  width: 60%;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #555;
+}
+
+.result-row {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.letter-box {
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.correct {
+  background-color: #4caf50;
+}
+
+.misplaced {
+  background-color: #ffc107;
+}
+
+.incorrect {
+  background-color: #f44336;
+}
+
+.back-link-about {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+.back-link-about:hover {
+  text-decoration: underline;
+}
 

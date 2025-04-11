@@ -56,6 +56,7 @@ export default function About() {
         <strong>Kurs:</strong> Avancerad webbutveckling - Fullstack <br />
         <strong>Datum:</strong> 2025-04-15
       </p>
+      <a href="/" class="back-link-about">Tillbaka till spelet</a>
     </div>
   );
 }

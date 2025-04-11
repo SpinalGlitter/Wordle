@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import GuessInput from "./GuessInput";
 import GuessResult from "./GuessResult";
 import HighscoreForm from "./HighscoreForm";
-import Button from "./Button";
+import ButtonOne from "./ButtonOne.jsx";
+import ButtonTwo from "./ButtonTwo.jsx";
 import { API_URL } from "../config.js";
-
 
 export default function Game() {
   const [correctWord, setCorrectWord] = useState("");
@@ -17,9 +17,7 @@ export default function Game() {
   const [uniqueLetters, setUniqueLetters] = useState(false);
 
   const fetchWord = () => {
-    fetch(
-      `${API_URL}/api/word?length=${wordLength}&unique=${uniqueLetters}`
-    )
+    fetch(`${API_URL}/api/word?length=${wordLength}&unique=${uniqueLetters}`)
       .then((response) => response.json())
       .then((data) => {
         setCorrectWord(data.word);
@@ -91,6 +89,12 @@ export default function Game() {
         <button type="submit" style={{ marginLeft: "1rem" }} className="button">
           New Game
         </button>
+        <Link to="/highscore">
+          <ButtonOne>Highscore</ButtonOne>
+        </Link>
+        <Link to="/about">  
+          <ButtonTwo>About</ButtonTwo>
+        </Link>
       </form>
 
       {!isCorrect ? (
@@ -111,9 +115,6 @@ export default function Game() {
           correctWord={correctWord}
         />
       )}
-      <Link to="/highscore">
-        <Button>Highscore</Button>
-      </Link>
     </div>
   );
 }

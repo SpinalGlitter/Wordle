@@ -2,15 +2,10 @@ export default function GuessResult({ results }) {
     return (
         <div>
             {results.map((result, index) => (
-                <div key={index}>
-                    {result.map((letter, i) => (
-                        <span key={i} 
-                              style={{
-                                color: letter.result === 'correct' ? 'green' : 
-                                       letter.result === 'misplaced' ? 'orange' : 'red',
-                              }}
-                        >
-                        {letter.letter.toUpperCase()}
+                <div className="result-row" key={index}>
+                    {result.map((letterObj, i) => (
+                        <span key={i} className={`letter-box ${letterObj.result}`}>
+                        {letterObj.letter}
                         </span>
                     ))}
                 </div>
