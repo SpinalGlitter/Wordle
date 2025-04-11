@@ -9,22 +9,44 @@
 <body>
     <h1 class="header">Highscore lista</h1>
 
-    <ul>
-        <% highscores.forEach(score=> { %>
-            <li>
-                <strong>
-                    <%= score.name %>
-                </strong>
-                - Correct word: <%= score.correctWord.charAt(0).toUpperCase() + score.correctWord.slice(1) %>
-                    - Time: <%= score.duration %> seconds
-                        - Number of Guesses: <%= score.guesses %>
-                            - Number of characters: <%= score.wordLength %>
-                                - Unique letters: <%= score.uniqueLetters ? "Yes" : "No" %>
-            </li>
-            <% }) %>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Namn</th>
+                <th>Gissningar</th>
+                <th>Tid (s)</th>
+                <th>Ordlängd</th>
+                <th>Unika bokstäver</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% highscores.forEach((score, index)=> { %>
+                <tr>
+                    <td class="rank">
+                        <%= index + 1 %>
+                    </td>
+                    <td>
+                        <%= score.name %>
+                    </td>
+                    <td>
+                        <%= score.guesses %>
+                    </td>
+                    <td>
+                        <%= score.duration %>
+                    </td>
+                    <td>
+                        <%= score.wordLength %>
+                    </td>
+                    <td>
+                        <%= score.uniqueLetters ? "Ja" : "Nej" %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
 
-    <a href="http://localhost:5173/">Tillbaka till spelet</a>
+    <a href="http://localhost:5173/" class="back-link">Tillbaka till spelet</a>
 </body>
 
 </html>
