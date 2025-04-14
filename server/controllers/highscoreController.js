@@ -26,7 +26,6 @@ export const addHighscores = async (req, res) => {
     });
 
     await newScore.save();
-    console.log("Highscore saved:", newScore);
 
     res.status(201).json({ message: "Highscore added successfully" });
   } catch (error) {
