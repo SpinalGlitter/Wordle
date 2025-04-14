@@ -1,3 +1,5 @@
+import ColorLegend from "../components/ColorLegends.jsx";
+
 export default function About() {
   return (
     <div style={{ padding: "20px", maxWidth: "800px", margin: "auto" }}>
@@ -38,8 +40,12 @@ export default function About() {
         <li>Frontend hämtar ett slumpmässigt ord från backend.</li>
         <li>Användaren gissar ordet, och backend ger feedback via API.</li>
         <li>
-          När spelet är slut sparas resultatet i MongoDB Atlas och visas i en
-          highscore-lista.
+          Användaren får feedback i form av färgade rutor: grön, gul eller röd.
+        </li>
+        <ColorLegend />
+        <li>
+          När spelet är slut och du gissat rätt ord så får du chansen att spara
+          resultat och är det tillräckligt bra så kommer det med på Highscorelistan.
         </li>
       </ol>
 

@@ -1,0 +1,33 @@
+.wordle-row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .wordle-box {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .correct-box {
+    background-color: #4caf50;
+  }
+  
+  .misplaced-box {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .incorrect-box {
+    background-color: #f44336;
+  }
+  

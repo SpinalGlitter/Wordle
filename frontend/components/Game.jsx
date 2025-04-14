@@ -25,7 +25,6 @@ export default function Game() {
         setResults([]);
         setGuess("");
         setIsCorrect(false);
-        console.log("New word: ", data.word);
       })
       .catch((error) => {
         console.error("Error trying to fetch word:", error);

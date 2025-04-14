@@ -25,7 +25,6 @@ export default function HighscoreForm({
         uniqueLetters,
       }),
     }).then(() => (window.location.href = "/highscore"));
-    console.log(data);
   };
   return (
     <div>
