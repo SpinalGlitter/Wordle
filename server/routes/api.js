@@ -2,8 +2,8 @@ import express from "express";
 import {
   getRandomWordHandler,
   validateGuess,
-} from "../controller/gameController.js";
-import { addHighscores } from "../controller/highscoreController.js";
+} from "../controllers/gameController.js";
+import { addHighscores } from "../controllers/highscoreController.js";
 
 const router = express.Router();
 

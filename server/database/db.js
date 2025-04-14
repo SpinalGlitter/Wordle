@@ -12,7 +12,6 @@ export async function connectDB() {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       };
-    console.log("MongoDB connected!");
   } catch (error) {
     console.error("Error to connect to Mongodb:", error);
     process.exit(1);
