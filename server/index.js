@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 import { connectDB } from "./database/db.js";
 import apiRoutes from "./routes/api.js";
@@ -21,15 +22,26 @@ app.set("views", path.join(process.cwd(), "views"));
 
 connectDB();
 
-app.use("/static", express.static(path.join(rootDir, "public/dist")));
+app.use("/dist", express.static(path.join(rootDir, "public/dist")));
 app.use(express.static(path.join(process.cwd(), "style")));
+
+const assetsPath = path.join(rootDir, "public/dist/assets");
+const jsFile = fs.readdirSync(assetsPath).find((file) => file.endsWith(".js"));
+
+const cssFile = fs
+  .readdirSync(assetsPath)
+  .find((file) => file.endsWith(".css"));
 
 app.use("/api", apiRoutes);
 
 app.use("/", pageRoutes);
 
 app.get(/^\/(?!api|highscore).*/, (req, res) => {
-  res.sendFile(path.join(rootDir, "public/dist", "index.html"));
+  res.render("index", {
+    title: "Wordle",
+    scriptFile: `/dist/assets/${jsFile}`,
+    styleFile: `/dist/assets/${cssFile}`,
+  });
 });
 
 app.listen(PORT, () => {
