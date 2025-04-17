@@ -1,12 +1,53 @@
-# React + Vite
+# 🎮 Wordle spel med Highscore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Detta är ett Wordle-spel. Användaren gissar ett slumpmässigt ord, får färgkodad feedback, och kan skicka in sin tid och antal gissningar till en highscore-lista. Sidan innehåller också en "About"-sida.
 
-Currently, two official plugins are available:
+## 🧱 Teknisk översikt
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 👨‍💻 Frontend
+- **React** (via Vite) – användargränssnitt, logik och interaktion
+- Dynamisk rendering av feedback (grön/gul/röd)
+- Valbara spelinställningar (ordlängd, unika bokstäver)
+- Formulär för highscore
 
-## Expanding the ESLint configuration
+### 🌐 Backend
+- **Node.js & Express**
+- API-endpoints för:
+  - Hämta slumpmässigt ord
+  - Validera gissningar med feedback-algoritm
+  - Skicka in highscore
+- Server-side rendering av highscore-listan med **EJS**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🗃️ Databas
+- **MongoDB Atlas** – molnbaserad datalagring
+- Highscores sparas med: namn, antal gissningar, tid, ordlängd m.m
+
+---
+
+## 🚀 Kom igång
+
+### 📦 Installation
+
+```bash
+git clone https://github.com/SpinalGlitter/Wordle.git
+cd wordle/server
+npm install
+npm start
+```
+> Standardport: `http://localhost:5080`
+
+### 🧪 För granskning/testning
+
+Om du vill använda en **egen MongoDB Atlas-URL**:
+
+1. **Skapa en `.env`-fil** i `server/` med:
+   ```
+   MONGODB_URI=din_mongodb_uri_här
+   ```
+
+2. **Alternativt**: Gå till `server/database/db.js` och byt ut raden:
+   ```js
+   const url = process.env.MONGODB_URI;
+   ```
+   mot din egen hårdkodade URL (endast för test).
+
