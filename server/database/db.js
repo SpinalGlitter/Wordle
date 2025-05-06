@@ -9,11 +9,7 @@ const url =
 
 export async function connectDB() {
   try {
-    await mongoose.connect(url),
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      };
+    await mongoose.connect(url)
   } catch (error) {
     console.error("Error to connect to Mongodb:", error);
     process.exit(1);
