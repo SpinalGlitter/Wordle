@@ -1,16 +1,16 @@
-# 🎮 Wordle spel med Highscore
+# Wordle spel med Highscore
 
 Detta är ett Wordle-spel. Användaren gissar ett slumpmässigt ord, får färgkodad feedback, och kan skicka in sin tid och antal gissningar till en highscore-lista. Sidan innehåller också en "About"-sida.
 
-## 🧱 Teknisk översikt
+## Teknisk översikt
 
-### 👨‍💻 Frontend
+### Frontend
 - **React** (via Vite) – användargränssnitt, logik och interaktion
 - Dynamisk rendering av feedback (grön/gul/röd)
 - Valbara spelinställningar (ordlängd, unika bokstäver)
 - Formulär för highscore
 
-### 🌐 Backend
+### Backend
 - **Node.js & Express**
 - API-endpoints för:
   - Hämta slumpmässigt ord
@@ -18,15 +18,15 @@ Detta är ett Wordle-spel. Användaren gissar ett slumpmässigt ord, får färgk
   - Skicka in highscore
 - Server-side rendering av highscore-listan med **EJS**
 
-### 🗃️ Databas
+### Databas
 - **MongoDB Atlas** – molnbaserad datalagring
 - Highscores sparas med: namn, antal gissningar, tid, ordlängd m.m
 
 ---
 
-## 🚀 Kom igång
+## Kom igång
 
-### 📦 Installation
+### Installation
 
 ```bash
 git clone https://github.com/SpinalGlitter/Wordle.git
@@ -36,7 +36,7 @@ npm start
 ```
 > Standardport: `http://localhost:5080`
 
-### 🧪 För granskning/testning
+### För granskning/testning
 
 Om du vill använda en **egen MongoDB Atlas-URL**:
 
